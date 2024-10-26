@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/img/health.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    html,
+    body,
+    header,
+    #intro {
+    height: 100%;
+    }
+    img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
+    </style>
+    <title>Diabetes-AI</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Diabetes Prediction App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      </nav>
+      <!--Mask-->
+      <div id="intro" class="container-fluid view ">
+        <h1 class="text-center text-capitalize pt-5">Diabetes Prediction for male Using Machine Learning!</h1>
+        <h2 class="text-center text-capitalize pt-5">Please fill up the following information!!</h2>
+        <hr class="w-75 mx-auto pt-5">
+        <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img style="margin-top: -45%;" src="../static/image.jpeg" class="float-left">
+            <hr class="w-75 mx-auto pt-5">
+            <h1> {{ prediction_text }}</h1>
+
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="{{ url_for('predict1')}}" method="post">
+              <div class="form-group">
+                <!-- TODO : Year to accept only year date picker -->
+                <label for="Pregnancies">Family Diabetes</label>
+                <input class="form-control" type="number" id="Family_Diabetes" name="Family_Diabetes" required="required" placeholder="NO - 0 or YES - 1">
+              </div>
+              <div class="form-group">
+                <label for="Glucose">Glucose Level</label>
+                <input class="form-control" type="number" step="any" id="Glucose" name="Present_Price" required="required" placeholder="Glucose Level">
+              </div>
+              <div class="form-group">
+                <label for="BloodPressure">Blood Pressure</label>
+                <input class="form-control" type="number" id="BloodPressure" name="BloodPressure" required="required" placeholder="Current Blood Pressure">
+              </div>
+              <div class="form-group">
+                <label for="Smoking">Smoking</label>
+                <input class="form-control" type="number" id="Smoking" name="Smoking" required="required" placeholder="Smoking">
+              </div>
+              <div class="form-group">
+                <label for="Alcohol">Alcohol</label>
+                <input class="form-control" type="number" id="Alcohol" name="Alcohol" required="required" placeholder="Alcohol">
+              </div>
+              <div class="form-group">
+                <label for="BMI">Enter the Body Mass Index</label>
+                <input class="form-control" type="number" id="BMI" name="BMI" required="required" placeholder="Body Mass Index">
+              </div>
+              <div class="form-group">
+                <label for="RegularMedicine">RegularMedicine</label>
+                <input class="form-control" type="number" id="RegularMedicine" name="RegularMedicine" required="required" placeholder="Regular Taking Medicine 0 or 1">
+              </div>
+              <div class="form-group">
+                <label for="Sleep">Sleep Hours</label>
+                <input class="form-control" type="number" id="Sleep" name="Sleep" required="required" placeholder="Sleep Hours">
+              </div>
+              <div class="form-group">
+                <label for="JunkFood">Habits of Junk Food</label>
+                <input class="form-control" type="number" id="JunkFood" name="JunkFood" required="required" placeholder="Occas - 0, NotOften - 1, Often - 2, Always -3">
+              </div>
+              <div class="form-group">
+                <label for="Age">Age</label>
+                <input class="form-control" type="number" id="Age" name="Age" required="required" placeholder="Age">
+              </div>
+
+
+              <button type="submit" class="btn btn-danger">Predict</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.Mask-->
+    </header>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
